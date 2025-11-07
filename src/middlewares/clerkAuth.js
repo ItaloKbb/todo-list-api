@@ -21,7 +21,6 @@ export const syncUserWithDb = async (req, res, next) => {
       where: { id: clerkUserId },
     });
 
-    // Se o usuário não existir, cria-o
     if (!user) {
       console.log(`Sincronizando novo usuário: ${clerkUserId}`);
 
@@ -42,12 +41,9 @@ export const syncUserWithDb = async (req, res, next) => {
         },
       });
     }
-
-    // Usuário verificado e sincronizado.
     next();
   } catch (error) {
     console.error('Erro ao sincronizar usuário:', error);
-    // Verifica se o erro é de email duplicado (embora o findUnique deva prevenir)
     if (error.code === 'P2002' && error.meta?.target.includes('email')) {
       return res.status(409).json({ error: 'Um usuário com este email já existe.' });
     }

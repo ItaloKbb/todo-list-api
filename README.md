@@ -107,7 +107,11 @@ Siga os passos abaixo para configurar e executar o projeto no seu ambiente de de
 4.  **Execute as Migrações do Banco:**
     O Prisma usará o schema para criar as tabelas no seu banco de dados.
     ```bash
-    npx prisma migrate dev
+        # 1. Executa as migrações (cria as tabelas no banco)
+        npx dotenv-cli npx prisma migrate dev
+
+        # 2. Gera o cliente Prisma
+        npx dotenv-cli npx prisma generate
     ```
 
 ### 3. Executando a Aplicação
