@@ -21,7 +21,7 @@ model Task {
   id          Int      @id @default(autoincrement())
   title       String
   description String?
-  status      String   @default("pendente")
+  status      TaskStatus @default(pendente)
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
 
@@ -29,4 +29,9 @@ model Task {
   user    User   @relation(fields: [user_id], references: [id])
 
   @@map("tasks")
+}
+
+enum TaskStatus {
+  pendente
+  concluída
 }
