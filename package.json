@@ -1,0 +1,27 @@
+{
+  "name": "todo-list-api",
+  "version": "1.0.0",
+  "description": "Este repositório contém o código-fonte do backend para o Sistema de Gerenciamento de Tarefas. A API é responsável por todas as regras de negócio, autenticação de usuários e gerenciamento de dados com o banco.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.13.23",
+    "@prisma/client": "^6.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.19.0"
+  }
+}
