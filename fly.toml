@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for todo-list-api-kawymq on 2025-11-07T14:45:44Z
+# fly.toml app configuration file generated for todo-list-api-kawymq on 2025-11-07T15:03:23Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -7,9 +7,6 @@ app = 'todo-list-api-kawymq'
 primary_region = 'iad'
 
 [build]
-
-[deploy]
-  release_command = 'npx prisma migrate deploy'
 
 [http_service]
   internal_port = 3000
