@@ -1,3 +1,4 @@
+import { TaskStatus } from '@prisma/client';
 import { z } from 'zod';
 
 /**
@@ -22,5 +23,5 @@ export const updateTaskDTO = z.object({
     .min(3, { message: 'O título deve ter pelo menos 3 caracteres.' })
     .optional(),
   description: z.string().optional(),
-  status: z.enum(['pendente', 'concluída']).optional(),
+  status: z.enum(TaskStatus).optional(),
 });
