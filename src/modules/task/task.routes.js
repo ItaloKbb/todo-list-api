@@ -11,9 +11,8 @@ router.use(clerkAuth, syncUserWithDb);
 
 router.get('/', TaskController.getAllTasks);
 router.post('/', TaskController.createTask);
-
-// (Vamos adicionar PUT e DELETE aqui)
-// router.put('/:id', TaskController.updateTask);
-// router.delete('/:id', TaskController.deleteTask);
+router.get('/:id', TaskController.getTaskById);
+router.put('/:id', TaskController.updateTask);
+router.delete('/:id', TaskController.deleteTask);
 
 export default router;
