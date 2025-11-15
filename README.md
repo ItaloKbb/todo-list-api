@@ -120,3 +120,22 @@ Após a instalação, inicie o servidor:
 
 ```bash
 npm run dev
+```
+
+### 4. Diagrama de arquitetura
+
+```mermaid
+flowchart LR
+    User["Usuario"] --> FE["Frontend (React / Vite)"]
+
+    subgraph "Sistema To-Do List"
+        FE -- "API REST (JSON)" --> BE["Backend (Node.js / Express)"]
+        BE -- "Prisma" --> DB["Database (Postgres)"]
+    end
+
+    subgraph "Serviço Externo"
+        FE -- "Autenticação" --> Clerk["Clerk"]
+        BE -- "Validação de Token" --> Clerk
+    end
+```    
+
